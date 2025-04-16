@@ -1,13 +1,13 @@
 package vehicle_manager.repository;
 
 import vehicle_manager.entity.Motorbike;
+import vehicle_manager.view.VehicleView;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MotorbikeRepository implements IMotorbikeRepository {
-    private static ArrayList<Motorbike> motorbikes = new ArrayList<>();
-    private static Scanner scanner = new Scanner(System.in);
+    private static final ArrayList<Motorbike> motorbikes = new ArrayList<>();
 
     static {
         motorbikes.add(new Motorbike("43-K1-678.56", "Yamaha", 2019, "Nguyễn Văn A", 100));
@@ -29,9 +29,7 @@ public class MotorbikeRepository implements IMotorbikeRepository {
     public void deleteByControlPlateMotor(String controlPlate) {
         for (int i = 0; i < motorbikes.size(); i++) {
             if (motorbikes.get(i).getControlPlate().equals(controlPlate)) {
-                System.out.println("Bạn có muốn xóa hay không?(CÓ/KHÔNG)");
-                String result = scanner.nextLine();
-                if (result.equalsIgnoreCase("CÓ")) {
+                if (VehicleView.confirmDelete()) {
                     motorbikes.remove(i);
                     System.out.println("Xóa thành công!");
                 }

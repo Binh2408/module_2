@@ -1,6 +1,6 @@
 package vehicle_manager.entity;
 
-public abstract class Vehicle {
+public class Vehicle {
     //biển kiểm soát
     private String controlPlate;
     //hãng sản xuất

@@ -10,6 +10,7 @@ import vehicle_manager.service.TruckService;
 import vehicle_manager.view.CarView;
 import vehicle_manager.view.MotorbikeView;
 import vehicle_manager.view.TruckView;
+import vehicle_manager.view.VehicleView;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -104,12 +105,9 @@ public class VehicleController {
     }
 
     public static void deleteVehicle() {
-        System.out.println("Nhập biển kiểm soát cần xóa: ");
-        String controlPlate = scanner.nextLine();
-
+        String controlPlate = VehicleView.inputControlPlate();
         // Gọi phương thức từ repository để xóa phương tiện
         boolean result = vehicleRepository.deleteVehicleByControlPlate(controlPlate);
-
         if (result) {
             System.out.println("Xóa thành công phương tiện với biển kiểm soát: " + controlPlate);
         } else {

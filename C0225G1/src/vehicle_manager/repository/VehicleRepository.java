@@ -17,6 +17,7 @@ public class VehicleRepository implements IVehicleRepository {
         }
 
         // Xóa trong TruckRepository
+
         for (Vehicle truck : truckRepository.findAll()) {
             if (truck.getControlPlate().equals(controlPlate)) {
                 truckRepository.deleteByControlPlateTruck(controlPlate);
