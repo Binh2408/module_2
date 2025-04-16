@@ -1,4 +1,4 @@
-package Menu;
+package student_manager_menu;
 
 import java.util.ArrayList;
 import java.util.Scanner;

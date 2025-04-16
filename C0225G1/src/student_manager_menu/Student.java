@@ -1,6 +1,6 @@
-package Menu;
+package student_manager_menu;
 
-public class Student {
+public class Student implements Comparable<Student> {
     int id;
     String name;
     int age;
@@ -45,5 +45,10 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return  o.getId() - this.getId();
     }
 }

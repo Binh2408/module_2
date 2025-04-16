@@ -7,7 +7,7 @@ public class Geometry {
         int choice;
         Scanner scanner = new Scanner(System.in);
         while(true) {
-            System.out.println("Menu");
+            System.out.println("student_manager_menu");
             System.out.println("1. Draw the triangle");
             System.out.println("2. Draw the square");
             System.out.println("3. Draw the rectangle");

@@ -7,7 +7,7 @@ public class ShowMenuDrawRectangle {
         Scanner scanner = new Scanner(System.in);
         int choice;
         while (true) {
-            System.out.println("Menu");
+            System.out.println("student_manager_menu");
             System.out.println("1. Print the rectangle");
             System.out.println("2. Print the square triangle (The corner is square at 4 different angles: top-left, top-right, botton-left, botton-right)");
             System.out.println("3. Print isosceles triangle");
