@@ -106,6 +106,11 @@ public class VehicleController {
 
     public static void deleteVehicle() {
         String controlPlate = VehicleView.inputControlPlate();
+        // Xác nhận trước khi xóa
+        if (!VehicleView.confirmDelete()) {
+            System.out.println("Hủy thao tác xóa.");
+            return;
+        }
         // Gọi phương thức từ repository để xóa phương tiện
         boolean result = vehicleRepository.deleteVehicleByControlPlate(controlPlate);
         if (result) {

@@ -30,10 +30,8 @@ public class CarRepository implements ICarRepository {
     public void deleteByControlPlateCar(String controlPlate) {
         for (int i = 0; i < cars.size(); i++) {
             if (cars.get(i).getControlPlate().equals(controlPlate)) {
-                if (VehicleView.confirmDelete()) {
                     cars.remove(i);
                     System.out.println("Xóa thành công!");
-                }
                 return;
             }
         }

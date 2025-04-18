@@ -28,11 +28,8 @@ public class TruckRepository implements ITruckRepository {
     public void deleteByControlPlateTruck(String controlPlate) {
         for (int i = 0; i < trucks.size(); i++) {
             if (trucks.get(i).getControlPlate().equals(controlPlate)) {
-                if(VehicleView.confirmDelete()) {
-
                     trucks.remove(i);
                     System.out.println("Xóa thành công!");
-                }
                 return;
             }
         }

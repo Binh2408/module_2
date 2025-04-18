@@ -20,4 +20,11 @@ public class Motorbike extends Vehicle{
     public void setPower(int power) {
         this.power = power;
     }
+
+    @Override
+    public String toString() {
+        return "Motorbike{" +super.toString()+
+                "power=" + power +
+                '}';
+    }
 }

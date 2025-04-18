@@ -29,10 +29,8 @@ public class MotorbikeRepository implements IMotorbikeRepository {
     public void deleteByControlPlateMotor(String controlPlate) {
         for (int i = 0; i < motorbikes.size(); i++) {
             if (motorbikes.get(i).getControlPlate().equals(controlPlate)) {
-                if (VehicleView.confirmDelete()) {
                     motorbikes.remove(i);
                     System.out.println("Xóa thành công!");
-                }
                 return;
             }
         }
