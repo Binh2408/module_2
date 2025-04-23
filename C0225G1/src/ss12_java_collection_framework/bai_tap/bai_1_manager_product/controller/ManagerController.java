@@ -57,7 +57,7 @@ public class ManagerController {
                     ProductView.displayProduct(newList);
                     break;
                 case 6:
-                    List<Product> productList = productService.findAll(); // lấy danh sách sản phẩm
+                    List<Product> productList; // lấy danh sách sản phẩm
                     System.out.println("Sắp xếp theo giá");
                     System.out.println("1.Tăng dần");
                     System.out.println("2.Giảm dần");
