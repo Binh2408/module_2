@@ -46,4 +46,8 @@ public class Product {
                 ", price=" + price +
                 '}';
     }
+
+    public String getInfoToFile() {
+        return this.id + "," + this.name + "," + this.price;
+    }
 }

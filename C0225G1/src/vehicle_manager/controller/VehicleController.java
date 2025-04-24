@@ -13,6 +13,7 @@ import vehicle_manager.view.TruckView;
 import vehicle_manager.view.VehicleView;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class VehicleController {
@@ -51,12 +52,12 @@ public class VehicleController {
                     return;
                 case 2:
                     System.out.println("Hiển thị xe oto");
-                    ArrayList<Car> cars = carService.findAll();
+                    List<Car> cars = carService.findAll();
                     CarView.displayCar(cars);
                     return;
                 case 3:
                     System.out.println("Hiển thị xe máy");
-                    ArrayList<Motorbike> motorbikes = motorbikeService.findAll();
+                    List<Motorbike> motorbikes = motorbikeService.findAll();
                     MotorbikeView.displayMotorbike(motorbikes);
                     return;
             }

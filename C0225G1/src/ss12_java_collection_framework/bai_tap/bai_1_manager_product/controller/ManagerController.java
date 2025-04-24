@@ -39,12 +39,20 @@ public class ManagerController {
                     break;
                 case 2:
                     System.out.println("Sửa sản phẩm");
-                    productService.edit(ProductView.inputID());
+                    if (productService.edit(ProductView.inputID())) {
+                        System.out.println("Sửa thành công");
+                    } else {
+                        System.out.println("Sửa ko thành công");
+                    }
 
                     break;
                 case 3:
                     System.out.println("Xóa sản phẩm");
-                    productService.delete(ProductView.inputID());
+                    if (productService.delete(ProductView.inputID())){
+                        System.out.println("Xóa thành công");
+                    } else {
+                        System.out.println("Xóa ko thành công");
+                    }
                     break;
                 case 4:
                     System.out.println("Hiển thị sản phẩm");

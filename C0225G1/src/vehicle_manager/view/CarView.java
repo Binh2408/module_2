@@ -3,12 +3,12 @@ package vehicle_manager.view;
 import vehicle_manager.entity.Car;
 import vehicle_manager.entity.Vehicle;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class CarView {
-    private static Scanner scanner = new Scanner(System.in);
-    public static void displayCar(ArrayList<Car> cars) {
+    private static final Scanner scanner = new Scanner(System.in);
+    public static void displayCar(List<Car> cars) {
         if (cars.isEmpty()) {
             System.out.println("Danh sách xe rỗng.");
             return;

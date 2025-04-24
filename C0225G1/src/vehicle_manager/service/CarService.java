@@ -5,12 +5,13 @@ import vehicle_manager.repository.CarRepository;
 import vehicle_manager.repository.ICarRepository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CarService implements ICarService {
     private ICarRepository carRepository = new CarRepository();
 
     @Override
-    public ArrayList<Car> findAll() {
+    public List<Car> findAll() {
         return carRepository.findAll();
     }
 
@@ -20,7 +21,12 @@ public class CarService implements ICarService {
     }
 
     @Override
-    public void deleteByControlPlateCar(String controlPlate) {
-        carRepository.deleteByControlPlateCar(controlPlate);
+    public boolean deleteByControlPlateCar(String controlPlate) {
+        return carRepository.deleteByControlPlateCar(controlPlate);
+    }
+
+    @Override
+    public boolean editByControlPlateCar(String controlPlate) {
+        return false;
     }
 }

@@ -9,9 +9,9 @@ public interface IProductService {
 
     void add(Product product);
 
-    void delete(int id);
+    boolean delete(int id);
 
-    void edit(int id);
+    boolean edit(int id);
 
     List<Product> search(String name);
 

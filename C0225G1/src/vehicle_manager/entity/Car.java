@@ -39,4 +39,8 @@ public class Car extends Vehicle {
                 '}';
     }
 
+    public String getInfoToFile() {
+        return super.getControlPlate()+","+super.getManufacterName()+","+super.getManufacterYear()+","+super.getOwnerPerson()+","+this.getSeat()+","+this.getCarType();
+    }
+
 }

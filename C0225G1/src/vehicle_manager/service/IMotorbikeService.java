@@ -3,9 +3,10 @@ package vehicle_manager.service;
 import vehicle_manager.entity.Motorbike;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface IMotorbikeService {
-    ArrayList<Motorbike> findAll();
+    List<Motorbike> findAll();
     void add(Motorbike motorbike);
-    void deleteByControlPlateMotor(String controlPlate);
+    boolean deleteByControlPlateMotor(String controlPlate);
 }

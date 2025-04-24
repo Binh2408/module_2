@@ -3,9 +3,11 @@ package vehicle_manager.service;
 import vehicle_manager.entity.Car;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface ICarService {
-    ArrayList<Car> findAll();
+    List<Car> findAll();
     void add(Car car);
-    void deleteByControlPlateCar(String controlPlate);
+    boolean deleteByControlPlateCar(String controlPlate);
+    boolean editByControlPlateCar(String controlPlate);
 }

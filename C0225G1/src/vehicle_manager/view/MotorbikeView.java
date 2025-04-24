@@ -4,11 +4,12 @@ import vehicle_manager.entity.Motorbike;
 import vehicle_manager.entity.Vehicle;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class MotorbikeView {
     private static Scanner scanner = new Scanner(System.in);
-    public static void displayMotorbike(ArrayList<Motorbike> motorbikes) {
+    public static void displayMotorbike(List<Motorbike> motorbikes) {
         if (motorbikes.isEmpty()) {
             System.out.println("Danh sách xe rỗng.");
             return;
