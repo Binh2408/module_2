@@ -1,0 +1,2 @@
+Hello, this is a test file!
+Let's copy this content as binary.

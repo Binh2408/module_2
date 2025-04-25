@@ -47,7 +47,7 @@ public class VehicleController {
             switch (choice) {
                 case 1:
                     System.out.println("Hiển thị xe tải");
-                    ArrayList<Truck> trucks = truckService.findAll();
+                    List<Truck> trucks = truckService.findAll();
                     TruckView.displayTruck(trucks);
                     return;
                 case 2:

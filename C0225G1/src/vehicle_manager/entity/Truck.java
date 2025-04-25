@@ -24,4 +24,9 @@ public class Truck extends Vehicle{
         return super.toString() + ", weight=" + weight + " tấn";
     }
 
+    public String getInfoToFile() {
+        return super.getControlPlate()+","+super.getManufacterName()+","+super.getManufacterYear()+","+super.getOwnerPerson()+","+this.getWeight();
+
+    }
+
 }

@@ -4,11 +4,12 @@ import vehicle_manager.entity.Truck;
 import vehicle_manager.entity.Vehicle;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class TruckView {
     private static Scanner scanner = new Scanner(System.in);
-    public static void displayTruck(ArrayList<Truck> trucks) {
+    public static void displayTruck(List<Truck> trucks) {
         if (trucks.isEmpty()) {
             System.out.println("Danh sách xe rỗng.");
             return;
