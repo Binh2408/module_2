@@ -29,7 +29,7 @@ public class Television extends Product {
 
     @Override
     public String getInfoToCSV() {
-        return super.getIdProduct()+","+super.getNameProduct()+","+super.getManufactureNameProduct()+","+super.getDescriptionProduct()+","+this.getInch();
+        return super.getIdProduct()+","+super.getNameProduct()+","+super.getPriceProduct()+","+super.getManufactureNameProduct()+","+super.getDescriptionProduct()+","+this.getInch();
 
     }
 }

@@ -1,10 +1,14 @@
 package ss17_io_binary_file.manager_product_by_character_file.controller;
 
 import ss17_io_binary_file.manager_product_by_character_file.entity.Phone;
+import ss17_io_binary_file.manager_product_by_character_file.entity.Television;
 import ss17_io_binary_file.manager_product_by_character_file.service.IPhoneService;
+import ss17_io_binary_file.manager_product_by_character_file.service.ITelevisionService;
 import ss17_io_binary_file.manager_product_by_character_file.service.PhoneService;
+import ss17_io_binary_file.manager_product_by_character_file.service.TelevisionService;
 import ss17_io_binary_file.manager_product_by_character_file.view.PhoneView;
 import ss17_io_binary_file.manager_product_by_character_file.view.ProductView;
+import ss17_io_binary_file.manager_product_by_character_file.view.TelevisionView;
 
 import java.util.List;
 import java.util.Scanner;
@@ -12,6 +16,7 @@ import java.util.Scanner;
 public class TypeOfProductController {
     private static final Scanner scanner = new Scanner(System.in);
     private static final IPhoneService phoneService = new PhoneService();
+    private static final ITelevisionService televisionService = new TelevisionService();
 
     //thêm
     public static void menuForAddFunction() {
@@ -32,6 +37,9 @@ public class TypeOfProductController {
                     break;
                 case 2:
                     System.out.println("------Add television------");
+                    Television television = TelevisionView.inputTelevision();
+                    televisionService.add(television);
+                    System.out.println("------Add Success------");
                     break;
                 case 3:
                     backToMainMenu = true;
@@ -58,6 +66,7 @@ public class TypeOfProductController {
                     break;
                 case 2:
                     System.out.println("------Display all television------");
+                    TelevisionView.displayTelevision(televisionService.findAll());
                     break;
                 case 3:
                     backToMainMenu = true;
@@ -80,9 +89,9 @@ public class TypeOfProductController {
             switch (choose) {
                 case 1:
                     System.out.println("------Delete phone------");
-                    int id = PhoneView.inputID();
-                    if (phoneService.findId(id)) {
-                        phoneService.delete(id);
+                    int idPhone = PhoneView.inputID();
+                    if (phoneService.findId(idPhone)) {
+                        phoneService.delete(idPhone);
                         System.out.println("------Delete Success------");
                     } else {
                         System.out.println("------ID not found------");
@@ -90,6 +99,13 @@ public class TypeOfProductController {
                     break;
                 case 2:
                     System.out.println("------Delete television------");
+                    int idTelevision = TelevisionView.inputID();
+                    if (televisionService.findId(idTelevision)){
+                        televisionService.delete(idTelevision);
+                        System.out.println("------Delete Success------");
+                    } else {
+                        System.out.println("------ID not found------");
+                    }
                     break;
                 case 3:
                     backToMainMenu = true;
@@ -112,9 +128,9 @@ public class TypeOfProductController {
             switch (choose) {
                 case 1:
                     System.out.println("------Update phone------");
-                    int id = PhoneView.inputID();
-                    if (phoneService.findId(id)) {
-                        Phone phone = PhoneView.inputForUpdate(id);
+                    int idPhone = PhoneView.inputID();
+                    if (phoneService.findId(idPhone)) {
+                        Phone phone = PhoneView.inputForUpdate(idPhone);
                         phoneService.update(phone);
                         System.out.println("------Update success------");
                     } else {
@@ -123,6 +139,14 @@ public class TypeOfProductController {
                     break;
                 case 2:
                     System.out.println("------Update television------");
+                    int idTelevision = TelevisionView.inputID();
+                    if (televisionService.findId(idTelevision)){
+                        Television television = TelevisionView.inputForUpdate(idTelevision);
+                        televisionService.update(television);
+                        System.out.println("------Update success------");
+                    } else {
+                        System.out.println("------ID not found------");
+                    }
                     break;
                 case 3:
                     backToMainMenu = true;
@@ -145,11 +169,13 @@ public class TypeOfProductController {
             switch (choose) {
                 case 1:
                     System.out.println("------Search phone------");
-                    String name = ProductView.inputName();
-                    phoneService.searchByName(name);
+                    String namePhone = ProductView.inputName();
+                    phoneService.searchByName(namePhone);
                     break;
                 case 2:
                     System.out.println("------Search television------");
+                    String nameTelevision = ProductView.inputName();
+                    televisionService.searchByName(nameTelevision);
                     break;
                 case 3:
                     backToMainMenu = true;
@@ -175,8 +201,8 @@ public class TypeOfProductController {
                     System.out.println("1. Ascending");
                     System.out.println("2. Descending");
                     System.out.println("Enter choice: ");
-                    int choice = Integer.parseInt(scanner.nextLine());
-                    switch (choice) {
+                    int choicePhone = Integer.parseInt(scanner.nextLine());
+                    switch (choicePhone) {
                         case 1:
                             List<Phone> ascendingList = phoneService.sortByPriceAscending();
                             PhoneView.displayPhone(ascendingList);
@@ -191,6 +217,22 @@ public class TypeOfProductController {
                     break;
                 case 2:
                     System.out.println("------Sort television------");
+                    System.out.println("1. Ascending");
+                    System.out.println("2. Descending");
+                    System.out.println("Enter choice: ");
+                    int choiceTelevision = Integer.parseInt(scanner.nextLine());
+                    switch (choiceTelevision) {
+                        case 1:
+                            List<Television> ascendingListTelevision = televisionService.sortByPriceAscending();
+                            TelevisionView.displayTelevision(ascendingListTelevision);
+                            break;
+                        case 2:
+                            List<Television> descendingList = televisionService.sortByPriceDescending();
+                            TelevisionView.displayTelevision(descendingList);
+                            break;
+                        default:
+                            System.out.println("Please choice from 1 to 2");
+                    }
                     break;
                 case 3:
                     backToMainMenu = true;
