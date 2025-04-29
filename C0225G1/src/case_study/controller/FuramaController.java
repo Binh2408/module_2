@@ -1,10 +1,16 @@
 package case_study.controller;
 
+import case_study.common.InputException;
+import case_study.model.Employee;
+import case_study.service.EmployeeService;
+import case_study.service.IEmployeeService;
+import case_study.view.SameView;
+
 import java.util.Scanner;
 
 public class FuramaController {
     private static final Scanner scanner = new Scanner(System.in);
-
+    private static final IEmployeeService employeeService = new EmployeeService();
     public static void displayMainMenu() {
         boolean flagMain = false;
         do {
@@ -14,7 +20,8 @@ public class FuramaController {
             System.out.println("4.\tBooking Management");
             System.out.println("5.\tPromotion Management");
             System.out.println("6.\tExit");
-            int chooseMain = getInput();
+            System.out.println("Choose function: ");
+            int chooseMain = InputException.getInput();
             boolean flagSubMain = false;
             switch (chooseMain) {
                 case 1:
@@ -23,10 +30,13 @@ public class FuramaController {
                         System.out.println("2.\tAdd new employee");
                         System.out.println("3.\tEdit employee");
                         System.out.println("4.\tReturn main menu");
-                        int chooseSubMain = getInput();
+                        System.out.println("Choose function: ");
+                        int chooseSubMain = InputException.getInput();
                         switch (chooseSubMain) {
                             case 1:
                                 System.out.println("1.\tDisplay list employees");
+                                SameView<Employee> employeeSameView = new SameView<>();
+                                employeeSameView.display(employeeService.findAll());
                                 break;
                             case 2:
                                 System.out.println("2.\tAdd new employee");
@@ -48,7 +58,7 @@ public class FuramaController {
                         System.out.println("2.\tAdd new customer");
                         System.out.println("3.\tEdit customer");
                         System.out.println("4.\tReturn main menu");
-                        int chooseSubMain = getInput();
+                        int chooseSubMain = InputException.getInput();
                         switch (chooseSubMain) {
                             case 1:
                                 System.out.println("1.\tDisplay list employees");
@@ -73,7 +83,7 @@ public class FuramaController {
                         System.out.println("2.\tAdd new facility");
                         System.out.println("3.\tDisplay list facility maintenance");
                         System.out.println("4.\tReturn main menu");
-                        int chooseSubMain = getInput();
+                        int chooseSubMain = InputException.getInput();
                         switch (chooseSubMain) {
                             case 1:
                                 System.out.println("1.\tDisplay list employees");
@@ -100,7 +110,7 @@ public class FuramaController {
                         System.out.println("4.\tDisplay list contracts");
                         System.out.println("5.\tEdit contracts");
                         System.out.println("6.\tReturn main menu");
-                        int chooseSubMain = getInput();
+                        int chooseSubMain = InputException.getInput();
                         switch (chooseSubMain) {
                             case 1:
                                 System.out.println("1.\tDisplay list employees");
@@ -130,7 +140,7 @@ public class FuramaController {
                         System.out.println("1.\tDisplay list customers use service");
                         System.out.println("2.\tDisplay list customers get voucher");
                         System.out.println("3.\tReturn main menu");
-                        int chooseSubMain = getInput();
+                        int chooseSubMain = InputException.getInput();
                         switch (chooseSubMain) {
                             case 1:
                                 System.out.println("1.\tDisplay list employees");
@@ -155,14 +165,5 @@ public class FuramaController {
         } while (!flagMain);
     }
 
-    // Helper method to get valid input
-    private static int getInput() {
-        while (true) {
-            try {
-                return Integer.parseInt(scanner.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input! Please enter a number.");
-            }
-        }
-    }
+
 }
