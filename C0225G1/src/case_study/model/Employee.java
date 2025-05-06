@@ -64,4 +64,10 @@ public class Employee extends Person{
                 ", salary=" + String.format("%.0f", salary)  +
                 '}';
     }
+    public String toCSV() {
+        return getName() + "," + getDateOfBirth() + "," + getSex() + "," + getIdCard() + "," +
+                getPhoneNumber() + "," + getEmail() + "," + employeeId + "," + level + "," +
+                position + "," + String.format("%.0f", salary);
+    }
+
 }

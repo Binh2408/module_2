@@ -11,7 +11,7 @@ public class ContactService implements IContactService{
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(String id) {
 
     }
 
@@ -21,7 +21,7 @@ public class ContactService implements IContactService{
     }
 
     @Override
-    public boolean findId(int id) {
+    public boolean findId(String id) {
         return false;
     }
 

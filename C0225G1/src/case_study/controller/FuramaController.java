@@ -1,9 +1,14 @@
 package case_study.controller;
 
 import case_study.common.InputException;
+import case_study.model.Customer;
 import case_study.model.Employee;
+import case_study.service.CustomerService;
 import case_study.service.EmployeeService;
+import case_study.service.ICustomerService;
 import case_study.service.IEmployeeService;
+import case_study.view.CustomerView;
+import case_study.view.EmployeeView;
 import case_study.view.SameView;
 
 import java.util.Scanner;
@@ -11,6 +16,8 @@ import java.util.Scanner;
 public class FuramaController {
     private static final Scanner scanner = new Scanner(System.in);
     private static final IEmployeeService employeeService = new EmployeeService();
+    private static final ICustomerService customerService = new CustomerService();
+
     public static void displayMainMenu() {
         boolean flagMain = false;
         do {
@@ -34,15 +41,32 @@ public class FuramaController {
                         int chooseSubMain = InputException.getInput();
                         switch (chooseSubMain) {
                             case 1:
-                                System.out.println("1.\tDisplay list employees");
+//                                System.out.println("1.\tDisplay list employees");
                                 SameView<Employee> employeeSameView = new SameView<>();
                                 employeeSameView.display(employeeService.findAll());
                                 break;
                             case 2:
-                                System.out.println("2.\tAdd new employee");
+//                                System.out.println("2.\tAdd new employee");
+                                Employee employee = EmployeeView.inputEmployee();
+                                if (employeeService.isEmployeeIdExists(employee.getEmployeeId(), employeeService.findAll())) {
+                                    System.out.println("Id is already exists!!!");
+                                } else {
+                                    employeeService.add(employee);
+                                    System.out.println("Add employee success!!!");
+                                    break;
+                                }
                                 break;
+
                             case 3:
-                                System.out.println("3.\tEdit employee");
+//                                System.out.println("3.\tEdit employee");
+                                String id = EmployeeView.inputID();
+                                if (employeeService.findId(id)) {
+                                    Employee employee1 = EmployeeView.inputForUpdateEmployee(id);
+                                    employeeService.update(employee1);
+                                    System.out.println("Edit employee success!!!");
+                                } else {
+                                    System.out.println("Employee ID not found " + id);
+                                }
                                 break;
                             case 4:
                                 flagSubMain = true;
@@ -61,13 +85,28 @@ public class FuramaController {
                         int chooseSubMain = InputException.getInput();
                         switch (chooseSubMain) {
                             case 1:
-                                System.out.println("1.\tDisplay list employees");
+                                SameView<Customer> customerSameView = new SameView<>();
+                                customerSameView.display(customerService.findAll());
                                 break;
                             case 2:
-                                System.out.println("2.\tAdd new employee");
+                                Customer customer = CustomerView.inputCustomer();
+                                if (customerService.isCustomerIdExists(customer.getCustomerId(), customerService.findAll())) {
+                                    System.out.println("ID is already exists!!!");
+                                } else {
+                                    customerService.add(customer);
+                                    System.out.println("Add customer success!!!");
+                                    break;
+                                }
                                 break;
                             case 3:
-                                System.out.println("3.\tEdit employee");
+                                String id = CustomerView.inputID();
+                                if (customerService.findId(id)) {
+                                    Customer customer1 = CustomerView.inputForUpdateCUstomer(id);
+                                    customerService.update(customer1);
+                                    System.out.println("Edit customer success!!!");
+                                } else {
+                                    System.out.println("ID customer not found " + id);
+                                }
                                 break;
                             case 4:
                                 flagSubMain = true;
@@ -86,10 +125,10 @@ public class FuramaController {
                         int chooseSubMain = InputException.getInput();
                         switch (chooseSubMain) {
                             case 1:
-                                System.out.println("1.\tDisplay list employees");
+
                                 break;
                             case 2:
-                                System.out.println("2.\tAdd new employee");
+                                FacilityController.displayMenuFacility();
                                 break;
                             case 3:
                                 System.out.println("3.\tEdit employee");

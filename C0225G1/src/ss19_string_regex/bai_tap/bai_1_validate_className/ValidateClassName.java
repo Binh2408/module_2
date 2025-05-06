@@ -1,4 +1,4 @@
-package ss18_string_regex.bai_tap.bai_1_validate_className;
+package ss19_string_regex.bai_tap.bai_1_validate_className;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

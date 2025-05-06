@@ -4,8 +4,8 @@ import java.util.List;
 
 public interface IService<T> {
     List<T> findAll();
-    void delete(int id);
+    void delete(String id);
     void add(T t);
-    boolean findId(int id);
+    boolean findId(String id);
     void update(T t);
 }

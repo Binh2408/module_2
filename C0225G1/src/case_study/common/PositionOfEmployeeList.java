@@ -6,9 +6,11 @@ import java.util.List;
 public class PositionOfEmployeeList {
     public static List<String> positionList = new ArrayList<>();
     static {
-        positionList.add("Lễ tân");
-        positionList.add("Phục vụ");
-        positionList.add("Lễ tân");
-        positionList.add("Lễ tân");
+        positionList.add("receptionist");
+        positionList.add("waiter");
+        positionList.add("specialist");
+        positionList.add("supervisor");
+        positionList.add("manager");
+        positionList.add("director");
     }
 }

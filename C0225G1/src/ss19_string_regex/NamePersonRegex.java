@@ -1,4 +1,4 @@
-package ss18_string_regex;
+package ss19_string_regex;
 
 public class NamePersonRegex {
     public static void main(String[] args) {
