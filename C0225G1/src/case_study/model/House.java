@@ -38,4 +38,10 @@ public class House extends Facility{
                 ", floorNumber=" + floorNumber +
                 '}';
     }
+    @Override
+    public String toCSV() {
+        return getServiceId() + "," + getServiceName() + "," + getUsableArea() + "," + getRentalCost() + "," +
+                getMaxPersonQuantity() + "," + getRentType() + "," + getRoomStandard() + "," + getFloorNumber();
+    }
+
 }

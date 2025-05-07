@@ -21,7 +21,7 @@ public class FacilityService implements IFacilityService{
 
     @Override
     public void add(Facility facility) {
-
+        facilityRepository.add(facility);
     }
 
     @Override
@@ -43,12 +43,10 @@ public class FacilityService implements IFacilityService{
     }
 
     @Override
-    public void addNewFacility() {
-
-    }
-
-    @Override
     public void displayFacilityNeedMaintenance() {
-
+        Map<Facility, Integer> facilitiesNeedMaintenance = facilityRepository.getFacilityNeedMaintenance();
+        for (Map.Entry<Facility, Integer> entry : facilitiesNeedMaintenance.entrySet()) {
+            System.out.println(entry.getKey() + " | Used: " + entry.getValue() + " times");
+        }
     }
 }

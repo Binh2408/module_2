@@ -70,13 +70,15 @@ public abstract class Facility {
 
     @Override
     public String toString() {
-        return "Facility{" +
+        return
                 "serviceId='" + serviceId + '\'' +
                 ", serviceName='" + serviceName + '\'' +
                 ", usableArea=" + usableArea +
                 ", rentalCost=" + rentalCost +
                 ", maxPersonQuantity=" + maxPersonQuantity +
                 ", rentType='" + rentType + '\'' +
-                '}';
+                ',';
     }
+    public abstract String toCSV(); // Bắt buộc lớp con phải override
+
 }

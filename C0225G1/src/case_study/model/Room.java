@@ -26,6 +26,12 @@ public class Room extends Facility{
                 "freeServiceIncluded='" + freeServiceIncluded + '\'' +
                 '}';
     }
+    @Override
+    public String toCSV() {
+        return getServiceId() + "," + getServiceName() + "," + getUsableArea() + "," + getRentalCost() + "," +
+                getMaxPersonQuantity() + "," + getRentType() + "," + getFreeServiceIncluded();
+    }
+
 }
 
 

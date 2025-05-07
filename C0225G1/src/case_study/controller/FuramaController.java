@@ -3,10 +3,7 @@ package case_study.controller;
 import case_study.common.InputException;
 import case_study.model.Customer;
 import case_study.model.Employee;
-import case_study.service.CustomerService;
-import case_study.service.EmployeeService;
-import case_study.service.ICustomerService;
-import case_study.service.IEmployeeService;
+import case_study.service.*;
 import case_study.view.CustomerView;
 import case_study.view.EmployeeView;
 import case_study.view.SameView;
@@ -17,7 +14,7 @@ public class FuramaController {
     private static final Scanner scanner = new Scanner(System.in);
     private static final IEmployeeService employeeService = new EmployeeService();
     private static final ICustomerService customerService = new CustomerService();
-
+    private static final IFacilityService facilityService = new FacilityService();
     public static void displayMainMenu() {
         boolean flagMain = false;
         do {
@@ -125,13 +122,13 @@ public class FuramaController {
                         int chooseSubMain = InputException.getInput();
                         switch (chooseSubMain) {
                             case 1:
-
+                                facilityService.displayFacility();
                                 break;
                             case 2:
                                 FacilityController.displayMenuFacility();
                                 break;
                             case 3:
-                                System.out.println("3.\tEdit employee");
+                                facilityService.displayFacilityNeedMaintenance();
                                 break;
                             case 4:
                                 flagSubMain = true;

@@ -50,4 +50,11 @@ public class Villa extends Facility{
                 ", floorNumber=" + floorNumber +
                 '}';
     }
+    @Override
+    public String toCSV() {
+        return getServiceId() + "," + getServiceName() + "," + getUsableArea() + "," + getRentalCost() + "," +
+                getMaxPersonQuantity() + "," + getRentType() + "," + getRoomStandard() + "," +
+                getPoolArea() + "," + getFloorNumber();
+    }
+
 }

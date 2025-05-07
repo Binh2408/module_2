@@ -1,7 +1,9 @@
 package case_study.view;
 
 import case_study.common.FacilityValidate;
+import case_study.common.RentTypeList;
 import case_study.model.House;
+import case_study.model.Room;
 import case_study.model.Villa;
 
 import java.util.Scanner;
@@ -68,7 +70,24 @@ public class FacilityView {
         }
 
         System.out.println("Enter rent type: ");
-        rentType = scanner.nextLine();
+        for (int i = 0; i < RentTypeList.rentTypeList.size(); i++) {
+            System.out.println((i+1) + ". " + RentTypeList.rentTypeList.get(i));
+        }
+        int choiceRentType;
+        while (true) {
+            System.out.println("Enter number you want to rent: ");
+            try {
+                choiceRentType = Integer.parseInt(scanner.nextLine());
+                if (choiceRentType >= 1 && choiceRentType <= RentTypeList.rentTypeList.size()) {
+                    break;
+                } else {
+                    System.out.println("Enter number from 1 to " + RentTypeList.rentTypeList.size());
+                }
+            } catch (NumberFormatException e){
+                System.out.println("Wrong format");
+            }
+        }
+        rentType = RentTypeList.rentTypeList.get(choiceRentType - 1);
 
         System.out.println("Enter room standard: ");
         roomStandard = scanner.nextLine();
@@ -105,7 +124,7 @@ public class FacilityView {
             try {
                 System.out.println("Enter House ID: ");
                 serviceId = scanner.nextLine();
-                FacilityValidate.validateVillaId(serviceId);
+                FacilityValidate.validateHouseId(serviceId);
                 break;
             } catch (Exception e){
                 System.out.println(e.getMessage());
@@ -157,7 +176,24 @@ public class FacilityView {
         }
 
         System.out.println("Enter rent type: ");
-        rentType = scanner.nextLine();
+        for (int i = 0; i < RentTypeList.rentTypeList.size(); i++) {
+            System.out.println((i+1) + ". " + RentTypeList.rentTypeList.get(i));
+        }
+        int choiceRentType;
+        while (true) {
+            System.out.println("Enter number you want to rent: ");
+            try {
+                choiceRentType = Integer.parseInt(scanner.nextLine());
+                if (choiceRentType >= 1 && choiceRentType <= RentTypeList.rentTypeList.size()) {
+                    break;
+                } else {
+                    System.out.println("Enter number from 1 to " + RentTypeList.rentTypeList.size());
+                }
+            } catch (NumberFormatException e){
+                System.out.println("Wrong format");
+            }
+        }
+        rentType = RentTypeList.rentTypeList.get(choiceRentType - 1);
 
         System.out.println("Enter room standard: ");
         roomStandard = scanner.nextLine();
@@ -173,6 +209,91 @@ public class FacilityView {
             }
         }
         return new House(serviceId,serviceName,usableArea,rentalCost,maxPersonQuantity,rentType,roomStandard,floorNumber);
+    }
+
+    public static Room inputRoom(){
+        String serviceId, serviceName, rentType, freeServiceIncluded;
+        double usableArea, rentalCost;
+        int maxPersonQuantity;
+        while (true) {
+            try {
+                System.out.println("Enter Room ID: ");
+                serviceId = scanner.nextLine();
+                FacilityValidate.validateRoomId(serviceId);
+                break;
+            } catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
+
+        while(true) {
+            try {
+                System.out.println("Enter name service: ");
+                serviceName = scanner.nextLine();
+                FacilityValidate.validateServiceName(serviceName);
+                break;
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        while (true) {
+            try {
+                System.out.println("Enter area house:  ");
+                usableArea = Double.parseDouble(scanner.nextLine());
+                FacilityValidate.validateArea(usableArea);
+                break;
+            } catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
+
+        while (true) {
+            try{
+                System.out.println("Enter rental cost: ");
+                rentalCost = Double.parseDouble(scanner.nextLine());
+                FacilityValidate.validateCost(rentalCost);
+                break;
+            } catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
+
+        while (true) {
+            try {
+                System.out.println("Enter peple quantity: ");
+                maxPersonQuantity = Integer.parseInt(scanner.nextLine());
+                FacilityValidate.validateMaxPeople(maxPersonQuantity);
+                break;
+            } catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
+
+        System.out.println("Enter rent type: ");
+        for (int i = 0; i < RentTypeList.rentTypeList.size(); i++) {
+            System.out.println((i+1) + ". " + RentTypeList.rentTypeList.get(i));
+        }
+        int choiceRentType;
+        while (true) {
+            System.out.println("Enter number you want to rent: ");
+            try {
+                choiceRentType = Integer.parseInt(scanner.nextLine());
+                if (choiceRentType >= 1 && choiceRentType <= RentTypeList.rentTypeList.size()) {
+                    break;
+                } else {
+                    System.out.println("Enter number from 1 to " + RentTypeList.rentTypeList.size());
+                }
+            } catch (NumberFormatException e){
+                System.out.println("Wrong format");
+            }
+        }
+        rentType =RentTypeList.rentTypeList.get(choiceRentType - 1);
+
+        System.out.println("Enter room free service: ");
+        freeServiceIncluded = scanner.nextLine();
+
+        return new Room(serviceId,serviceName,usableArea,rentalCost,maxPersonQuantity,rentType,freeServiceIncluded);
     }
 
 }
