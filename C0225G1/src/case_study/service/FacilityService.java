@@ -35,18 +35,18 @@ public class FacilityService implements IFacilityService{
     }
 
     @Override
-    public void displayFacility() {
-        Map<Facility, Integer> facilities = facilityRepository.getAllFacilityMap();
-        for (Map.Entry<Facility, Integer> entry : facilities.entrySet()) {
-            System.out.println(entry.getKey() + " | Used: " + entry.getValue() + " times");
-        }
+    public Map<Facility, Integer> displayFacility() {
+        return facilityRepository.getAllFacilityMap();
+//        for (Map.Entry<Facility, Integer> entry : facilities.entrySet()) {
+//            System.out.println(entry.getKey() + " | Used: " + entry.getValue() + " times");
+//        }
     }
 
     @Override
-    public void displayFacilityNeedMaintenance() {
-        Map<Facility, Integer> facilitiesNeedMaintenance = facilityRepository.getFacilityNeedMaintenance();
-        for (Map.Entry<Facility, Integer> entry : facilitiesNeedMaintenance.entrySet()) {
-            System.out.println(entry.getKey() + " | Used: " + entry.getValue() + " times");
-        }
+    public Map<Facility, Integer> displayFacilityNeedMaintenance() {
+        return facilityRepository.getFacilityNeedMaintenance();
+//        for (Map.Entry<Facility, Integer> entry : facilitiesNeedMaintenance.entrySet()) {
+//            System.out.println(entry.getKey() + " | Used: " + entry.getValue() + " times");
+//        }
     }
 }

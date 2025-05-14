@@ -57,4 +57,8 @@ public class Contract {
                 ", totalPaymentAmount=" + totalPaymentAmount +
                 '}';
     }
+
+    public String toCSV() {
+        return contractNumber+","+bookingId+","+depositAmount+","+totalPaymentAmount;
+    }
 }

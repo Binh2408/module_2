@@ -8,4 +8,5 @@ import java.util.Map;
 public interface IFacilityRepository extends IRepository<Facility> {
     Map<Facility, Integer> getAllFacilityMap();
     Map<Facility, Integer> getFacilityNeedMaintenance();
+    void increaseUsage(String serviceId);
 }

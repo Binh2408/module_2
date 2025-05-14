@@ -74,7 +74,6 @@ public class CustomerView {
             try {
                 System.out.println("Enter customer id: ");
                 customerId = scanner.nextLine();
-                CustomerValidate.validateId(customerId);
                 break;
             } catch (Exception e) {
                 System.out.println(e.getMessage());

@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bdafa23-24c1-4841-b0cc-61b7df6bcb89" name="Changes" comment="" />
+    <list default="true" id="9bdafa23-24c1-4841-b0cc-61b7df6bcb89" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/case_study/controller/FuramaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/controller/FuramaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/data/employee.csv" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/data/employee.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/model/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/model/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/model/Contract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/repository/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/repository/BookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/repository/ContactRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/repository/ContractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/repository/FacilityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/repository/FacilityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/repository/IBookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/repository/IBookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/repository/IContactRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/repository/IContractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/repository/IFacilityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/repository/IFacilityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/service/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/service/BookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/service/ContactService.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/service/ContractService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/service/FacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/service/FacilityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/service/IBookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/service/IBookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/service/IContactService.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/service/IContractService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/service/IFacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/service/IFacilityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/view/CustomerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/view/CustomerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/view/FacilityView.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/view/FacilityView.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,10 +29,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2wdZukRbQRrX6U8rnHdHScioUZG" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,7 +42,9 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "E:/Code_Gym/Git/module_2/module_2/C0225G1/src",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -44,6 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1746373638352</updated>
       <workItem from="1746373641017" duration="34000" />
+      <workItem from="1747103791999" duration="282000" />
     </task>
     <servers />
   </component>

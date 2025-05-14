@@ -2,7 +2,7 @@ package case_study.model;
 
 import java.time.LocalDate;
 
-public class Booking {
+public class Booking implements Comparable<Booking>{
     private String bookingId;
     private LocalDate bookingDate;
     private LocalDate startDate;
@@ -80,5 +80,14 @@ public class Booking {
                 ", customerId='" + customerId + '\'' +
                 ", serviceId='" + serviceId + '\'' +
                 '}';
+    }
+
+    public String toCSV(){
+        return getBookingId()+","+getBookingDate()+","+getStartDate()+","+getEndDate()+","+getCustomerId()+","+getServiceId();
+    }
+
+    @Override
+    public int compareTo(Booking o) {
+        return this.startDate.compareTo(o.startDate);
     }
 }
